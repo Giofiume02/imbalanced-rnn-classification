@@ -1,0 +1,7 @@
+pirate_pain_*.csv
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store

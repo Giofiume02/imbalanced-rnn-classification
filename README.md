@@ -1,7 +1,7 @@
 # AN2DL Challenge — Time-Series Pain Classification (Pirate Pain)
 
-End-to-end pipeline for **multiclass time-series classification** from joint-angle and pain-related signals.
-The goal is to predict the pain level (**no_pain / low_pain / high_pain**) for each `sample_index`.
+End-to-end pipeline for **multiclass time-series classification** from joint-angle and pain-related signals.  
+The goal is to predict the pain level (**no_pain / low_pain / high_pain**) for each `sample_index`.  
 Evaluation metric: **Macro F1**.
 
 This work was developed for the **AN2DL course challenge**; a detailed write-up is available in `reports/AN2DL_Challenges_Report.pdf`.
@@ -36,7 +36,7 @@ Each `sample_index` contains **160 timesteps**. Labels are provided at sample le
   - rolling mean / std (window size 10)
 
 ### Handling imbalance
-Oversampling (Gaussian noise / SMOTE) was tested but increased overfitting risk and could generate unrealistic temporal patterns.
+Oversampling (Gaussian noise / SMOTE) was tested but increased overfitting risk and could generate unrealistic temporal patterns.  
 Final approach: **Focal Loss with inverse-frequency weights** + **label smoothing**.
 
 ### Model
@@ -73,6 +73,7 @@ Final predictions are obtained via an **ensemble** of the best-performing models
 | **Macro Avg** | 0.9864 | 0.9608 | **0.9722** |
 
 ## How to run
+
 1. Create an environment (Python 3.10+ recommended).
 2. Install dependencies:
    ```bash

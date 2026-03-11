@@ -1,0 +1,33 @@
+# Dataset
+pirate_pain_*.csv
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments / local config
+.venv/
+venv/
+.env
+
+# macOS
+.DS_Store
+
+# PyTorch model checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Experiment outputs
+runs/
+tensorboard/
+logs/
+models/
+
+# Local matplotlib config
+configs/

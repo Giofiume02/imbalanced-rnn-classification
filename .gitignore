@@ -1,14 +1,21 @@
 # Dataset
 pirate_pain_*.csv
 
+# Generated submissions
+FINAL_SUBMISSION*.csv
+submission*.csv
+
 # Jupyter / Colab
 .ipynb_checkpoints/
+*.ipynb_checkpoints
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.pytest_cache/
+.mypy_cache/
 
 # Virtual environments / local config
 .venv/

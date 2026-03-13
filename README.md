@@ -38,14 +38,11 @@ The main evaluation metric used throughout the project is the **macro F1-score**
 
 ## Dataset
 
-According to the project report, the original dataset includes:
+The original dataset used in the project includes:
 
 - `pirate_pain_train.csv`: **105,760 rows × 40 columns**
 - `pirate_pain_train_labels.csv`: **661 labeled sequences**
 - `pirate_pain_test.csv`: **211,840 rows × 40 columns**
-
-The original dataset used for the challenge is not distributed in this repository.  
-Only the project code, methodology, and documented results are shared here for portfolio and reproducibility purposes.
 
 ### Data Structure
 

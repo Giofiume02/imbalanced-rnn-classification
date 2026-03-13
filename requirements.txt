@@ -1,10 +1,11 @@
+jupyter
+matplotlib
 numpy
 pandas
 scikit-learn
-imbalanced-learn
 scipy
-statsmodels
-matplotlib
 seaborn
-torch
+statsmodels
 tensorboard
+torch
+imbalanced-learn

@@ -162,7 +162,7 @@ Now I summarizes the incremental improvement in F1-score as follows:
 
 ### Validation Metrics by Class
 
-On the validation set (30% of training data), the reported per-class performance is:
+On the validation set (20% of training data), the reported per-class performance is:
 
 | Class | Precision | Recall | F1 Score | Support |
 |---|---:|---:|---:|---:|

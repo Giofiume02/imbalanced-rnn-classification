@@ -27,6 +27,7 @@ def run_stratified_kfold_cv(
     hidden_layers,
     hidden_size,
     learning_rate,
+    max_lr,
     dropout_rate,
     window_size,
     stride,
@@ -224,7 +225,7 @@ def run_stratified_kfold_cv(
 
         scheduler = torch.optim.lr_scheduler.OneCycleLR(
             optimizer,
-            max_lr=learning_rate,
+            max_lr=max_lr,
             steps_per_epoch=len(train_loader),
             epochs=epochs,
             pct_start=0.3,

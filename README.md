@@ -246,8 +246,8 @@ This project is structured as follows:
 │   └── ensemble.py                # Weighted-voting utilities
 ├── images/
 │   ├── class_distribution.png
-│   ├── training_curves.png
-│   └── confusion_matrix.png
+│   ├── roc_auc_cv.png
+│   └── confusion_matrix_cv.png
 └── results/
     └── metrics_summary.csv
 ```

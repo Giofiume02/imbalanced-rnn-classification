@@ -175,6 +175,16 @@ These results show very strong overall performance, while also confirming that t
 
 ---
 
+## Aggregated Validation Evaluation
+
+The figures below summarize out-of-fold validation performance aggregated across cross-validation folds.
+
+![Aggregated confusion matrix](images/confusion_matrix_cv.png)
+
+![Aggregated ROC-AUC curves](images/roc_auc_cv.png)
+
+---
+
 ## Best Model
 
 The best single-model configuration was a:

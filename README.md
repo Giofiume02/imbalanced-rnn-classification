@@ -62,6 +62,8 @@ The dataset is strongly imbalanced, with approximately:
 - **14.22%** Low Pain
 - **8.47%** High Pain
 
+![Class distribution](images/class_distribution.png)
+
 This imbalance had a major impact on both model training and evaluation strategy.
 
 ---

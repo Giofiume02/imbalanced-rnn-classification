@@ -47,7 +47,7 @@ def train_one_epoch(model, train_loader, criterion, optimizer, scaler, scheduler
     epoch_f1 = f1_score(
         np.concatenate(all_targets),
         np.concatenate(all_predictions),
-        average='macro'
+        average='weighted'
     )
 
     return epoch_loss, epoch_f1
@@ -94,7 +94,7 @@ def validate_one_epoch(model, val_loader, criterion, device):
     epoch_f1 = f1_score(
         np.concatenate(all_targets),
         np.concatenate(all_predictions),
-        average='macro'
+        average='weighted'
     )
 
     return epoch_loss, epoch_f1

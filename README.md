@@ -32,7 +32,7 @@ Each sample is a multivariate time series composed of **160 time steps**, with f
 - risk of overfitting
 - the need to capture both local and long-range temporal dependencies
 
-The main evaluation metric used throughout the project is the **macro F1-score**, chosen because of the unbalanced class distribution.
+The main evaluation metric used throughout the project is the **weighted F1-score**, since it provides an overall performance measure that accounts for class imbalance while still combining precision and recall.
 
 ---
 
@@ -148,16 +148,16 @@ The training pipeline also included several techniques to improve robustness:
 
 ### 7. Ensemble Strategy and Results
 
-In the final part I used an **ensemble of the three best-performing models**, which produced the most stable and accurate final predictions. 
+In the final stage, an **ensemble of the three best-performing models** was used, yielding the most stable and accurate predictions.
 
 ## Impact of the Main Techniques
 
-Now I summarizes the incremental improvement in F1-score as follows:
+The table below summarizes the incremental improvement in weighted F1-score across the main modeling steps.
 
-| Configuration | F1 Score |
+| Configuration | Weighted F1 Score |
 |---|---:|
 | Baseline BiLSTM | 0.9368 |
-| + Class balancing (Focal Loss) | 0.9401 |
+| + Class imbalance mitigation (Focal Loss) | 0.9401 |
 | + Feature engineering | 0.9470 |
 | + Conv1D layer | 0.9479 |
 | + Attention | 0.9484 |
@@ -171,7 +171,7 @@ On a representative validation split (10% of training data), the reported per-cl
 | No Pain | 0.9935 | 1.0000 | 0.9968 | 154 |
 | Low Pain | 0.9655 | 1.0000 | 0.9825 | 28 |
 | High Pain | 1.0000 | 0.8824 | 0.9375 | 17 |
-| Macro Avg | 0.9864 | 0.9608 | 0.9722 | 199 |
+| Weighted Avg | 0.9864 | 0.9608 | 0.9722 | 199 |
 
 These results show very strong overall performance, while also confirming that the **High Pain** class remains the most difficult one to identify consistently.
 
@@ -198,7 +198,9 @@ The best single-model configuration was a:
 - gradient clipping
 - label smoothing
 
-This configuration offered the best trade-off between local pattern extraction, sequence memory, and timestep relevance weighting.
+This configuration achieved a **weighted F1-score of 0.9484**, offering the best trade-off between local pattern extraction, sequence memory, and timestep relevance weighting among individual models.
+
+However, the final **ensemble of the three best-performing models** produced the strongest overall validation performance, reaching a **weighted F1-score of 0.9628**.
 
 ---
 
@@ -210,7 +212,7 @@ Below are the most significant technical takeaways that drove the model's perfor
 - focal loss with inverse-frequency weighting was more effective than oversampling-based methods
 - Conv1D layers helped extract short-range motion patterns before recurrent modeling
 - attention improved the model’s ability to focus on the most informative time steps
-- ensemble learning increased both performance stability and final macro F1-score
+- ensemble learning increased both performance stability and final weighted F1-score
 
 ---
 
@@ -241,8 +243,8 @@ This project is structured as follows:
 │   ├── models.py                  # CNN + RNN + Attention definitions
 │   ├── preprocessing.py           # Data cleaning and scaling
 │   ├── feature_engineering.py     # Temporal feature generation
-│   ├── train.py                   # Training loops with OneCycleLR scheduling
-│   ├── evaluate.py              # Confusion matrices & F1-Score tracking
+│   ├── train.py                   # Training loops, scheduling, and regularization
+│   ├── evaluate.py                # Confusion matrices & F1-score tracking
 │   ├── cross_validation.py        # Stratified K-Fold logic at sample level
 │   ├── hyperparameter_tuning.py   # Grid search implementation for RNNs
 │   └── ensemble.py                # Weighted-voting utilities

@@ -1,0 +1,17 @@
+config_name,mean_f1,std_f1,window_size,stride,hidden_size,bidirectional,dropout_rate
+window_size_27_stride_13_hidden_size_128_bidirectional_True_dropout_rate_0.3,0.9389645870860448,0.018227656036273514,27,13,128,True,0.3
+window_size_27_stride_6_hidden_size_64_bidirectional_True_dropout_rate_0.3,0.9370665203300039,0.0193051859498815,27,6,64,True,0.3
+window_size_27_stride_6_hidden_size_64_bidirectional_True_dropout_rate_0.4,0.9331795784984358,0.021181977129251642,27,6,64,True,0.4
+window_size_27_stride_13_hidden_size_64_bidirectional_True_dropout_rate_0.4,0.9325888079023988,0.01906514445372455,27,13,64,True,0.4
+window_size_27_stride_6_hidden_size_64_bidirectional_False_dropout_rate_0.3,0.9323050494454008,0.013303476468454908,27,6,64,False,0.3
+window_size_27_stride_6_hidden_size_128_bidirectional_False_dropout_rate_0.4,0.9320852598185703,0.021265556794982928,27,6,128,False,0.4
+window_size_27_stride_6_hidden_size_64_bidirectional_False_dropout_rate_0.4,0.9314554615809929,0.021019224300662075,27,6,64,False,0.4
+window_size_27_stride_6_hidden_size_128_bidirectional_False_dropout_rate_0.3,0.9309881266221558,0.01877163504251984,27,6,128,False,0.3
+window_size_27_stride_13_hidden_size_128_bidirectional_False_dropout_rate_0.4,0.9293560293033067,0.022584168511932526,27,13,128,False,0.4
+window_size_27_stride_6_hidden_size_128_bidirectional_True_dropout_rate_0.4,0.9286753205470373,0.02211901238562641,27,6,128,True,0.4
+window_size_27_stride_13_hidden_size_64_bidirectional_False_dropout_rate_0.4,0.9284867706218444,0.021937079111593632,27,13,64,False,0.4
+window_size_27_stride_13_hidden_size_128_bidirectional_False_dropout_rate_0.3,0.9281859290543727,0.01668793665383018,27,13,128,False,0.3
+window_size_27_stride_6_hidden_size_128_bidirectional_True_dropout_rate_0.3,0.9279920217531921,0.022031035338272983,27,6,128,True,0.3
+window_size_27_stride_13_hidden_size_64_bidirectional_True_dropout_rate_0.3,0.9276708551864921,0.018572331111126352,27,13,64,True,0.3
+window_size_27_stride_13_hidden_size_128_bidirectional_True_dropout_rate_0.4,0.9276335287494424,0.016272960553064823,27,13,128,True,0.4
+window_size_27_stride_13_hidden_size_64_bidirectional_False_dropout_rate_0.3,0.9233536600082145,0.018507700042189733,27,13,64,False,0.3

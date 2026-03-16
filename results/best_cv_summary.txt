@@ -1,0 +1,10 @@
+Best configuration selected from 10-fold cross-validation
+
+window_size = 27
+stride = 13
+hidden_size = 128
+bidirectional = True
+dropout_rate = 0.3
+
+Mean macro F1 = 0.9390
+Std macro F1 = 0.0182

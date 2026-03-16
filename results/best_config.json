@@ -1,0 +1,9 @@
+{
+    "window_size": 27,
+    "stride": 13,
+    "hidden_size": 128,
+    "bidirectional": true,
+    "dropout_rate": 0.3,
+    "mean_f1": 0.9390,
+    "std_f1": 0.0182
+}

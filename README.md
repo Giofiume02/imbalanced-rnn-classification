@@ -58,9 +58,9 @@ The feature space includes:
 
 The dataset is strongly imbalanced, with approximately:
 
-- **77.13%** No Pain
-- **14.22%** Low Pain
-- **8.47%** High Pain
+- **77.30%** No Pain
+- **14.20%** Low Pain
+- **8.50%** High Pain
 
 ![Class distribution](images/class_distribution.png)
 

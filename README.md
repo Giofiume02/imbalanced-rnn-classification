@@ -156,15 +156,15 @@ Now I summarizes the incremental improvement in F1-score as follows:
 
 | Configuration | F1 Score |
 |---|---:|
-| Baseline UniLSTM | 0.9368 |
-| + Class balancing (SMOTE + Focal Loss) | 0.9401 |
+| Baseline BiLSTM | 0.9368 |
+| + Class balancing (Focal Loss) | 0.9401 |
 | + Feature engineering | 0.9470 |
 | + Conv1D layer | 0.9479 |
 | + Attention | 0.9484 |
 
 ### Validation Metrics by Class
 
-On a representative validation split (20% of training data), the reported per-class performance is:
+On a representative validation split (10% of training data), the reported per-class performance is:
 
 | Class | Precision | Recall | F1 Score | Support |
 |---|---:|---:|---:|---:|
@@ -191,7 +191,7 @@ The figures below summarize out-of-fold validation performance aggregated across
 
 The best single-model configuration was a:
 
-**CNN + UniLSTM + Attention** architecture, trained with:
+**CNN + BiLSTM + Attention** architecture, trained with:
 
 - AdamW
 - learning rate scheduling
@@ -251,7 +251,9 @@ This project is structured as follows:
 │   ├── roc_auc_cv.png
 │   └── confusion_matrix_cv.png
 └── results/
-    └── metrics_summary.csv
+    ├── tuning_results.csv
+    ├── best_config.json
+    └── best_cv_summary.txt
 ```
 ---
 

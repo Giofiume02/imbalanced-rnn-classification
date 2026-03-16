@@ -242,7 +242,7 @@ This project is structured as follows:
 │   ├── preprocessing.py           # Data cleaning and scaling
 │   ├── feature_engineering.py     # Temporal feature generation
 │   ├── train.py                   # Training loops with OneCycleLR scheduling
-│   ├── evaluation.py              # Confusion matrices & F1-Score tracking
+│   ├── evaluate.py              # Confusion matrices & F1-Score tracking
 │   ├── cross_validation.py        # Stratified K-Fold logic at sample level
 │   ├── hyperparameter_tuning.py   # Grid search implementation for RNNs
 │   └── ensemble.py                # Weighted-voting utilities

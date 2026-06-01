@@ -163,17 +163,20 @@ The training pipeline also included several techniques to improve robustness:
 
 In the final stage, an **ensemble of the three best-performing models** was used, yielding the most stable and accurate predictions.
 
-## Impact of the Main Techniques
+## Experimental Design and Ablation Study
 
-The table below summarizes the incremental improvement in weighted F1-score across the main modeling steps.
+The project follows an incremental experimental design. Starting from a recurrent baseline, each subsequent experiment introduces one major methodological change, allowing the contribution of each component to be evaluated separately.
 
-| Configuration | Weighted F1 Score |
-|---|---:|
-| Baseline BiLSTM | 0.9368 |
-| + Class imbalance mitigation (Focal Loss) | 0.9401 |
-| + Feature engineering | 0.9470 |
-| + Conv1D layer | 0.9479 |
-| + Attention | 0.9484 |
+| Experiment | Main Change Introduced | Weighted F1 | Interpretation |
+|---|---:|---:|---|
+| Baseline BiLSTM | Recurrent sequence modeling | 0.9368 | Strong initial baseline for temporal classification |
+| + Focal Loss | Class imbalance mitigation | 0.9401 | Improved learning under skewed class distribution |
+| + Temporal Feature Engineering | Velocity, acceleration, rolling statistics | 0.9470 | Motion dynamics provide relevant discriminative information |
+| + Conv1D Layer | Local temporal pattern extraction | 0.9479 | Short-range sequence patterns improve recurrent representations |
+| + Attention | Time-step relevance weighting | 0.9484 | Attention helps identify the most informative temporal regions |
+| Final Ensemble | Combination of best models | 0.9628 | Ensemble learning improves robustness and final predictive performance |
+
+This ablation-style analysis shows that the largest improvement came from temporal feature engineering, while architectural refinements such as Conv1D and attention provided smaller but consistent additional gains.
 
 ### Validation Metrics by Class
 
@@ -238,6 +241,21 @@ Some experimental outcomes were especially informative:
 - some non-bidirectional RNNs performed surprisingly well once stronger feature engineering was introduced
 
 These findings reinforce an important practical lesson: methods that work well on tabular data do not always transfer well to sequential data.
+
+---
+
+## Limitations
+
+This project has several limitations:
+
+1. The dataset is relatively small, with 661 labeled training sequences, which increases the risk of overfitting and makes robust validation particularly important.
+2. The original dataset cannot be redistributed, limiting full external reproducibility.
+3. The class distribution is highly imbalanced, with the minority classes representing a much smaller portion of the data.
+4. Oversampling methods such as SMOTE may generate unrealistic synthetic temporal patterns, since they do not explicitly preserve the sequential structure of the original signals.
+5. The final ensemble improves predictive performance but reduces interpretability compared to a single model.
+6. The project focuses on predictive performance rather than clinical or domain-specific validation of the pain labels.
+
+Future work could address these limitations by evaluating the pipeline on larger datasets, testing additional sequence models such as Transformers, and introducing more interpretable temporal attention analysis.
 
 ---
 

@@ -83,7 +83,7 @@ This imbalance had a major impact on both model training and evaluation strategy
 
 ## Main Challenges
 
-The report highlights several key challenges that shaped the modeling strategy:
+The project involved several key challenges that shaped the modeling strategy:
 
 - identifying correlated or non-informative variables
 - detecting outliers and anomalous motion patterns
@@ -180,7 +180,7 @@ This ablation-style analysis shows that the largest improvement came from tempor
 
 ### Validation Metrics by Class
 
-On a representative validation split (10% of training data), the reported per-class performance is:
+On a representative validation split, the reported per-class performance is:
 
 | Class | Precision | Recall | F1 Score | Support |
 |---|---:|---:|---:|---:|
@@ -296,3 +296,19 @@ The original challenge dataset is not included in this repository.
 
 This repository is intended to showcase the project methodology, modeling pipeline, feature engineering strategy, and experimental results.  
 Due to challenge-specific data restrictions and to keep the repository lightweight, only the codebase, documentation, and selected outputs are shared.
+
+---
+
+## Research Relevance
+
+This repository is intended to showcase not only the final model performance, but also the methodological reasoning behind the project.
+
+The project demonstrates how deep learning pipelines for imbalanced sequential data can be improved through a combination of:
+
+- loss-level imbalance mitigation
+- temporal feature design
+- architecture-level sequence modeling
+- robust validation
+- ensemble learning
+
+For this reason, the project can be interpreted as a research-oriented machine learning case study on imbalanced multivariate time-series classification.

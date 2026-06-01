@@ -16,6 +16,19 @@ The final solution combines engineered temporal features, recurrent architecture
 
 ---
 
+## Research Question
+
+This project investigates how class-imbalance mitigation and temporal representation learning affect the performance of deep learning models in multivariate time-series classification.
+
+In particular, the project explores the following questions:
+
+1. Can focal loss with inverse-frequency weighting improve minority-class recognition compared to oversampling-based approaches?
+2. Do engineered temporal features, such as velocity, acceleration, rolling mean, and rolling standard deviation, improve the representation of motion dynamics?
+3. Can convolutional sequence encoding and attention mechanisms improve recurrent neural networks by capturing local temporal patterns and identifying the most informative time steps?
+4. Which combination of preprocessing, feature engineering, model architecture, and ensemble strategy provides the best trade-off between accuracy, robustness, and minority-class detection?
+
+---
+
 ## Project Overview
 
 The task consists of classifying each sequence into one of three pain-related categories:
